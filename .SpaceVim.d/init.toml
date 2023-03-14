@@ -1,0 +1,91 @@
+# Enable autocomplete layer
+[[layers]]
+  name = 'autocomplete'
+  auto_completion_return_key_behavior = "complete"
+  auto_completion_tab_key_behavior = "complete"
+
+[[layers]]
+  name = "fzf"
+
+# Version Control
+[[layers]]
+  name = 'git'
+[[layers]]
+  name = 'VersionControl'
+
+# Languages 
+[[layers]]
+  name = "lang#haskell"
+
+[[layers]]
+  name = "lang#rust"
+[[layers]]
+  name = "lang#python"
+[[layers]]
+  name = "lang#java"
+  java_formatter_jar = '/Users/songboyao/.SpaceVim.d/google-java-format-1.16.0-all-deps.jar'
+[[layers]]
+  name = "lang#c"
+
+[[layers]]
+  name = "colorscheme"
+
+# Custom Plugins
+[options]
+  autocomplete_method = 'coc'
+  snippet_engine = "ultisnips"
+  relativenumber = false
+  bootstrap_before = 'myspacevim#before'
+  bootstrap_after = 'myspacevim#after'
+  enable_guicolors = true
+  enable_smooth_scrolling = false
+  colorscheme = "nord"
+  colorscheme_bg = "dark"
+  enable_tabline_ft_icon = false
+  windows_leader = ''
+  statusline_separator = "nil"
+  statusline_iseparator = "bar"
+  statusline_unicode = false
+  guifont = "Comic Code:h11"
+
+
+[[layers]]
+  name = "lang#vim"
+[[layers]]
+  name = "debug"
+[[layers]]
+  name = "lang#markdown"
+  enabled_formater = ['prettier']
+[[layers]]
+  name = "lsp"
+    filetypes = ["java","rust"]
+  [layers.override_cmd]
+    java = [
+    "java",
+    "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+    "-Dosgi.bundles.defaultStartLevel=4",
+    "-Declipse.product=org.eclipse.jdt.ls.core.product",
+    "-Dlog.protocol=true",
+    "-Dlog.level=NONE",
+    "-noverify",
+    "-Xmx1G",
+    "-jar",
+    "/opt/homebrew/Cellar/jdtls/1.20.0/libexec/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
+    "-configuration",
+    "/opt/homebrew/Cellar/jdtls/1.20.0/libexec/config_mac",
+    "-data",
+    "/opt/homebrew/Cellar/jdtls/1.20.0/libexec/.cache"
+    ]
+    rust = ["rust-analyzer"]
+
+[[layers]]
+  name = "shell"
+
+[[layers]]
+  name = "gtags"
+  gtagslabel = "pygments"
+
+[[layers]]
+  name = "incsearch"
+[[layers]]
+  name = "lang#latex"
