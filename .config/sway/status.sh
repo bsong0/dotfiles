@@ -14,9 +14,11 @@ linux_version=$(uname -r | cut -d '-' -f1)
 
 # Returns the battery status: "Full", "Discharging", or "Charging".
 bat_percentage=$(upower -i `upower -e | grep 'BAT'` | python3 -c "from sys import stdin;s=''.join([i for i in stdin]);import re;print(re.search(r'percentage:\s+(.+)\n',s).group(1))" )
-battery_status=$(cat /sys/class/power_supply/BAT*/status)
+battery_status=$(cat /sys/class/power_supply/BAT*/status | python3 -c "s=input();print('Charging' if s == 'Charging' else '!Charging')")
+
+network_status=$(ifconfig | python3 -c "from sys import stdin;s=''.join([i for i in stdin]);s=([i for i in s.split('\n\n') if 'wlan' in i or 'eth' in i][0]);import re;r=re.search(r'(.*?): flags', s);print('e\n' if r == None else '', end='');r1=re.search(r'inet (.*?) ', s).group(1);print(f'{r.group(1)}: {r1}')")
 
 # Emojis and characters for the status bar
 # 💎 💻 💡 🔌 ⚡ 📁 \|
-echo $bat_percentage "|" $battery_status "|" $date_formatted 
+echo $network_status "|" $bat_percentage "|" $battery_status "|" $date_formatted 
 

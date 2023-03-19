@@ -104,3 +104,36 @@ export PATH="$PATH:$HOME/.local/bin"
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
+export EUFS_CLI_HOME="/home/sby/dev/eufs_cli"
+. "$HOME/.cargo/env"
+export EUFS_MASTER=$HOME/eufs-master
+source $EUFS_MASTER/install/setup.zsh
+export COLCON_DEFAULTS_FILE=$EUFS_MASTER/.colcon/defaults.yaml
+export ROS_PYTHON_VERSION=3
+source /opt/ros/galactic/setup.zsh
+eval "$(zoxide init zsh)"
+
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+startx
+fi
+
+export $(dbus-launch)
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/sby/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/sby/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/sby/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/sby/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+export PATH="$PATH:$HOME/.local/idea-IU-223.8836.41/bin"

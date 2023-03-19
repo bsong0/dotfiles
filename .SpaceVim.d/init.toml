@@ -70,11 +70,11 @@
     "-noverify",
     "-Xmx1G",
     "-jar",
-    "/opt/homebrew/Cellar/jdtls/1.20.0/libexec/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
+    "/home/sby/.local/jdt-language-server-1.21/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
     "-configuration",
-    "/opt/homebrew/Cellar/jdtls/1.20.0/libexec/config_mac",
+    "/home/sby/.local/jdt-language-server-1.21/config_linux",
     "-data",
-    "/opt/homebrew/Cellar/jdtls/1.20.0/libexec/.cache"
+    "/home/sby/.local/jdt-language-server-1.21/.cache"
     ]
     rust = ["rust-analyzer"]
 
@@ -89,3 +89,7 @@
   name = "incsearch"
 [[layers]]
   name = "lang#latex"
+
+[[layers]]
+  name = 'core'
+  enable_smooth_scrolling = false

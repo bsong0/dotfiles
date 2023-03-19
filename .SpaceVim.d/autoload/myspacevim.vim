@@ -75,5 +75,5 @@ function! myspacevim#after() abort
       \]
   let g:vimtex_view_skim_sync = 1 
 "  let g:vimtex_view_skim_activate = 1
-  let g:vimtex_view_method = 'skim' 
+  let g:vimtex_view_method = 'zathura' 
 endfunction
