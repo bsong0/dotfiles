@@ -1,6 +1,9 @@
 import:
   - ~/.config/alacritty/themes/themes/nord.yaml
 
+window:
+  option_as_alt: OnlyLeft
+
 key_bindings:
   - { key: Left, mods: Alt, chars: "\x1bb" } # Skip word left
   - { key: Right, mods: Alt, chars: "\x1bf" } # Skip word right
@@ -13,5 +16,14 @@ key_bindings:
 
 font:
   normal:
-    family: Comic Code
+    family: ComicCode Nerd Font
+  size: 11
+  offset:
+    x: 1
+    y: 7
+  glyph_offset:
+    x: 0
+    y: 3
 
+debug:
+  print_events: true

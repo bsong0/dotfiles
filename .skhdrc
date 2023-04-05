@@ -5,15 +5,15 @@ ctrl + alt + cmd - r : brew services restart yabai
 lalt - return : open -na alacritty
 lalt - s : osascript /Users/songboyao/scripts/safari.scpt
 lalt - a : osascript /Users/songboyao/scripts/finder.scpt
-lalt - j : PYTHONSTARTUP=/Users/songboyao/jupyter_init.py /opt/homebrew/anaconda3/bin/jupyter qtconsole
+lctrl - p : PYTHONSTARTUP=/Users/songboyao/jupyter_init.py /opt/homebrew/anaconda3/bin/jupyter qtconsole
 
 lalt - space : yabai -m space --layout "$(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "stack" else "bsp" end')"
 lalt - m : yabai -m window --toggle native-fullscreen
 
-lctrl - down : yabai -m window --focus stack.next || yabai -m window --focus south
-lctrl - up : yabai -m window --focus stack.prev || yabai -m window --focus north
-lctrl - left : yabai -m window --focus west
-lctrl - right : yabai -m window --focus east
+lalt - j : yabai -m window --focus stack.next || yabai -m window --focus south
+lalt - k : yabai -m window --focus stack.prev || yabai -m window --focus north
+lalt - h : yabai -m window --focus west
+lalt - l : yabai -m window --focus east
   
 # fast focus desktop
 lalt - tab : yabai -m space --focus recent

@@ -1,11 +1,15 @@
+[[layers]]
+  name = "telescope"
+[[layers]]
+    name = 'core'
+    enable_smooth_scrolling = false
 # Enable autocomplete layer
 [[layers]]
   name = 'autocomplete'
   auto_completion_return_key_behavior = "complete"
-  auto_completion_tab_key_behavior = "complete"
+  auto_completion_tab_key_behavior = "smart"
 
-[[layers]]
-  name = "fzf"
+
 
 # Version Control
 [[layers]]
@@ -41,7 +45,7 @@
   enable_smooth_scrolling = false
   colorscheme = "nord"
   colorscheme_bg = "dark"
-  enable_tabline_ft_icon = false
+  enable_tabline_ft_icon = true
   windows_leader = ''
   statusline_separator = "nil"
   statusline_iseparator = "bar"
@@ -89,3 +93,7 @@
   name = "incsearch"
 [[layers]]
   name = "lang#latex"
+
+[[custom_plugins]]
+  repo = "jinh0/eyeliner.nvim"
+  merged = false

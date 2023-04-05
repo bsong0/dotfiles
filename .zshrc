@@ -118,7 +118,7 @@ alias v=vim
 
 [ -f "/Users/songboyao/.ghcup/env" ] && source "/Users/songboyao/.ghcup/env" # ghcup-env
 
-export EDITOR=vim
+export EDITOR=nvim
 export VISUAL="$EDITOR"
 
 withBrewLLVM='LDFLAGS="-L/opt/homebrew/opt/llvm/lib" CPPFLAGS="-I/opt/homebrew/opt/llvm/include"'
@@ -171,7 +171,6 @@ GHC_ENV_PATH_TEMP="$(find $HOME/.ghc/*-$(ghc --version | grep -Eo "([0-9]{1,}\.)
 export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/libffi/lib"
 export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/libffi/include"
 export PATH="/Users/songboyao/scripts:$PATH"
-alias vim=nvim
 
 function focus_under_cursor {
   if yabai -m query --windows --space |
@@ -193,10 +192,9 @@ export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"
 export PATH="/Applications/Typora.app/Contents/MacOS:$PATH"
 alias ls=exa
 alias cat=bat
-alias diff=delta
 alias du=dust
 alias df=duf
-alias tree=broot
+alias br=broot
 alias dig=dog
 eval "$(zoxide init zsh)"
 alias cd=z
@@ -210,3 +208,7 @@ export PATH="$PATH:/Users/songboyao/dev/glrnvim/target/release"
 source /Users/songboyao/.config/broot/launcher/bash/br
 export CMAKE_OSX_ARCHITECTURES="arm64"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
+alias gist="gist -p -R -c"
+alias vim=nvim
+export PATH=$PATH:"/Users/songboyao/.local/pypy3.9-v7.3.11-macos_arm64/bin"
