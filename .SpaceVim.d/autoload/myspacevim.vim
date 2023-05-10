@@ -1,4 +1,7 @@
 function! myspacevim#before() abort
+  let g:vimtex_view_skim_sync = 1 
+"  let g:vimtex_view_skim_activate = 1
+  let g:vimtex_view_method = 'skim' 
     function! s:cargo_task() abort
     if filereadable('Cargo.toml')
         let commands = ['build', 'run', 'test']
@@ -56,6 +59,7 @@ function! myspacevim#after() abort
   call SpaceVim#plugins#tasks#reg_provider(funcref('s:cargo_task'))
   let g:neomake_tex_enabled_makers = []
   map <F1> :NERDTreeToggle<CR>
+  nnoremap <F12> :tabclose<CR>
   nnoremap <silent> <F3> :call SpaceVim#plugins#runner#open('make')<CR>
   nnoremap <silent> <F4> :call SpaceVim#plugins#runner#open('make run')<CR>
   nnoremap <silent> <F5> :call SpaceVim#plugins#runner#open('make clean')<CR>
@@ -73,7 +77,12 @@ function! myspacevim#after() abort
       \ 'Package siunitx Warning: Detected the "physics" package:',
       \ 'Package hyperref Warning: Token not allowed in a PDF string',
       \]
-  let g:vimtex_view_skim_sync = 1 
-"  let g:vimtex_view_skim_activate = 1
-  let g:vimtex_view_method = 'zathura' 
+  function! s:disable_coc_for_type()
+        let l:filesuffix_blacklist = ['tex']
+	if index(l:filesuffix_blacklist, expand('%:e')) != -1
+		let b:coc_enabled = 0
+	endif
+endfunction
+autocmd BufRead,BufNewFile * call s:disable_coc_for_type()
+
 endfunction

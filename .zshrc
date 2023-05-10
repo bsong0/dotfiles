@@ -118,7 +118,7 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 startx
 fi
 
-export $(dbus-launch)
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -134,6 +134,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-
-export PATH="$PATH:$HOME/.local/idea-IU-223.8836.41/bin"
