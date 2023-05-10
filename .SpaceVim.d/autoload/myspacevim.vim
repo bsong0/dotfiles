@@ -77,7 +77,6 @@ function! myspacevim#after() abort
       \ 'Package siunitx Warning: Detected the "physics" package:',
       \ 'Package hyperref Warning: Token not allowed in a PDF string',
       \]
-
   function! s:disable_coc_for_type()
         let l:filesuffix_blacklist = ['tex']
 	if index(l:filesuffix_blacklist, expand('%:e')) != -1
@@ -85,4 +84,5 @@ function! myspacevim#after() abort
 	endif
 endfunction
 autocmd BufRead,BufNewFile * call s:disable_coc_for_type()
+
 endfunction
