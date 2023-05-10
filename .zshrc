@@ -212,3 +212,7 @@ export PATH="$PATH:$HOME/.local/bin"
 alias gist="gist -p -R -c"
 alias vim=nvim
 export PATH=$PATH:"/Users/songboyao/.local/pypy3.9-v7.3.11-macos_arm64/bin"
+export PATH=$PATH:"$HOME/.config/emacs/bin/"
+test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
+alias em="emacsclient -c -n"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"

@@ -5,7 +5,8 @@ ctrl + alt + cmd - r : brew services restart yabai
 lalt - return : open -na alacritty
 lalt - s : osascript /Users/songboyao/scripts/safari.scpt
 lalt - a : osascript /Users/songboyao/scripts/finder.scpt
-lctrl - p : PYTHONSTARTUP=/Users/songboyao/jupyter_init.py /opt/homebrew/anaconda3/bin/jupyter qtconsole
+lalt - e : emacsclient -c -n 
+# ctrl - p : PYTHONSTARTUP=/Users/songboyao/jupyter_init.py /opt/homebrew/anaconda3/bin/jupyter qtconsole
 
 lalt - space : yabai -m space --layout "$(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "stack" else "bsp" end')"
 lalt - m : yabai -m window --toggle native-fullscreen
