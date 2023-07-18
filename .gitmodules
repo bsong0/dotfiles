@@ -1,3 +1,6 @@
 [submodule ".config/lvim"]
 	path = .config/lvim
 	url = https://github.com/bsong0/lvim.git
+[submodule ".fonts"]
+	path = .fonts
+	url = https://github.com/bsong0/fonts.git
