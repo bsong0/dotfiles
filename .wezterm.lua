@@ -1,6 +1,8 @@
 local wezterm = require 'wezterm'
 local config = {}
 
+config.default_prog = { '/usr/bin/tmux', '-l' }
+
 config.font = wezterm.font 'ComicCodeLigatures Nerd Font'
 config.default_domain = 'WSL:ubuntu2004'
 config.color_scheme = 'nord'
@@ -19,4 +21,7 @@ config.window_padding = {
   top = '0px',
   bottom = '0px',
 }
+
+config.scrollback_lines = 100000
+
 return config
